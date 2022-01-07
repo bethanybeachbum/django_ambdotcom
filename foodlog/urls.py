@@ -17,4 +17,8 @@ app_name = "foodlog"
 urlpatterns = [
 	# Home Page
 	path('', views.index, name='index'),
+	# Page that shows all foods.
+	path('foods/', views.foods, name='foods'),
+	# Detail page for a single food.
+	path('foods/<int:food_ids>/', views.food, name='food')
 ]

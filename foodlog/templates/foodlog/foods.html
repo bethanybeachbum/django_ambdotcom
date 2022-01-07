@@ -1,0 +1,18 @@
+{%  extends "foodlog/base.html"  %}
+
+{% block content  %}
+
+<p> Foods </p>
+
+<ul>
+	{% for each in foods %}
+		<li>
+		<a href="{% url 'foodlog:food' food.id %}">{{food}}</a>
+		</li>
+		<!-- old line:  <li>{{ each }}</li>  -->
+	{% empty %} 
+		<li> No food has been added yet.</li> -->
+	{% endfor %}
+</ul>
+
+{% endblock content %}

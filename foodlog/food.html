@@ -1,0 +1,19 @@
+{%  extends "foodlog/base.html"  %}
+
+{% block content  %}
+
+<p> Food: {{ food }} </p>
+
+<p> Entries: </p>
+<ul>
+	{% for each in entries %}
+		<li>
+			<p>{{ entry.date_added| date 'M d, Y H:i' }} </p>
+			<p>{{ entry.text| linebreaks }}</p>
+		</li>
+	{% empty %}
+		<li> No entries for this food yet.</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}
